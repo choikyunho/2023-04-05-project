@@ -19,6 +19,16 @@ const GameBoard =()=>{
             setHint("숫자를 잘못 입력하셨습니다!")
             return;
         }
+
+        if(randomNum===checkNum){
+            setHint("정답입니다!")
+        }
+        else if(randomNum>checkNum) {
+            setHint(`정답은 ${checkNum}보다 높은 숫자입니다.`);
+        }
+        else if(randomNum<checkNum) {
+            setHint(`정답은 ${checkNum}보다 낮은 숫자입니다.`);
+        }
     };
 
     useEffect(() => console.log(`랜덤 숫자는 ${randomNum}입니다.`), [randomNum]);
