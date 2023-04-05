@@ -1,10 +1,12 @@
-import ClassComponent from "./component/ClassComponent";
+import GameBoard from "./components/GameBoard";
+import GameResult from "./components/GameResult";
 
 function App() {
   return (  
-    <h1 className="text-3xl font-bold underline">
-      <ClassComponent/>
-    </h1>
+    <div className="flex flex-col justify-center items-center min-h-screen">
+        <GameResult/>
+        <GameBoard/>
+    </div>
   );
 }
 
