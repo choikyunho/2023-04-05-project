@@ -3,15 +3,18 @@ import { useEffect, useState } from "react";
 const GameBoard =()=>{
 
     const [randomNum, setRandomNum] = useState(Math.floor(Math.random()*100));
+    const [choiceNum, setChoiceNum]=useState(100);
     const [hint,setHint]=useState("0~100사이의 숫자를 맞춰보세요!");
 
-    useEffect(()=>console.log(randomNum),[randomNum]);
+
+
+    useEffect(() => console.log(`랜덤 숫자는 ${randomNum}입니다.`), [randomNum]);
 
     return (
     <div className=" w-full grow flex flex-col justify-center items-center">
     <div className="mb-4 text-xl font-bold">0~100사이의 숫자를 맞춰보세요!</div>
     <div>
-        <input className="border-2 rounded-lg px-4 py-2 focus:outline-pink-300 shadow-lg" type="text"/>
+        <input className="border-2 rounded-lg px-4 py-2 focus:outline-pink-300 shadow-lg" type="text" value={choiceNum}/>
         <button className="px-4 py-2 ml-2 rounded-lg border-2 border-pink-300 text-pink-300 shadow-lg"> 확인 </button>
     </div>
     </div>
